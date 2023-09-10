@@ -1,0 +1,1 @@
+components.input-file<?php /**PATH /home/jantonio/projectsLaravel/EmpleaTV2/storage/framework/views/b7b6a32f62cd699bd180640ab02b81a7.blade.php ENDPATH**/ ?>
