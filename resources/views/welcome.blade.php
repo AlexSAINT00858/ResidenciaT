@@ -17,12 +17,12 @@
         </h1>
         <img class="text-uppercase text-primary mb-1 logo" src="{{ asset('images/ITT.png') }}" alt="Image">
     @endsection
-    @section('menu')    
+    @section('menu')
         <li><a href="/">Inicio</a></li>
         <li><a href="/login">Iniciar Sesion como Empresa</a></li>
         <li><a href="/register">Registrar Empresa</a></li>
     @endsection
-    
+
     @section('contenido')
         @if (session('success'))
             <div class="alert alert-success">
@@ -67,10 +67,107 @@
             </button>
         </div>
 
-        <div class="py-12">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
             <br>
             <br>
             <br>
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <img class="zoom" src="{{ asset('images/CISCO.png') }}" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">EMPLEO</h5>
+                        <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">FECHA</li>
+                                <li class="list-group-item">SALARIO (OPCIONAL)</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" src="{{ asset('images/TELMEX.png') }}" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">EMPLEO</h5>
+                        <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">FECHA</li>
+                                <li class="list-group-item">SALARIO (OPCIONAL)</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" src="{{ asset('images/CFE.png') }}" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">EMPLEO</h5>
+                        <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">FECHA</li>
+                                <li class="list-group-item">SALARIO (OPCIONAL)</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" src="{{ asset('images/GOB.png') }}" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">EMPLEO</h5>
+                        <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">FECHA</li>
+                                <li class="list-group-item">SALARIO (OPCIONAL)</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" src="{{ asset('images/GOB.png') }}" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">EMPLEO</h5>
+                        <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">FECHA</li>
+                                <li class="list-group-item">SALARIO (OPCIONAL)</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" src="{{ asset('images/GOB.png') }}" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">EMPLEO</h5>
+                        <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">FECHA</li>
+                                <li class="list-group-item">SALARIO (OPCIONAL)</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
@@ -86,7 +183,7 @@
                                             <br>
                                             <p class="card-text">${{ $offer->salary }}</p>
                                             <p class="card-text">{{ $offer->publicationDate }}</p>
-                                            
+
                                             <a href="/loginCandidate/{{ $offer->idOffer }}" class="btn btn-outline-primary btn-sm">Postularse</a>
                                         </div>
                                     </div>
@@ -96,10 +193,11 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
-        
+
     @endsection
-    
+
 
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </body>

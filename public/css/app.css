@@ -159,3 +159,7 @@ nav {
     margin: 3%;
     box-shadow: 0px 10px 10px black;
 }
+
+img:hover {
+    transform: scale(1.5);
+}

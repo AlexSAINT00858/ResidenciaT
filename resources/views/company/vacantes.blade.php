@@ -15,7 +15,7 @@
             {{ session('success') }}
         </div>
     @endif
-    
+
     <table class="table table-bordered text-center" style="width: 80%; margin:auto">
         <tr class="table-dark">
             <th>id</th>
@@ -24,8 +24,8 @@
             <th>Telefono</th>
             <th>E-mail</th>
             <th>Trabajo</th>
-            <th>CV</th>
             <th>Eliminar</th>
+            <th>Almacenar</th>
         </tr>
         @foreach ($dataJobApplications as $data)
             <tr class="table-light">
