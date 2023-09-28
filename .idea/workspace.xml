@@ -5,50 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c3291b5-d3ca-4532-a578-036ef0f60544" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/hot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/appRegisterOffer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/company/showHistory.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/04581d5526cc8709efeacec824a17d89.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/14c3421ca086cb9c92f5e22a5690cb86.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/19387a867f39da41589b3cd3a29c228f.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/263997dfe2a6fb4559c81a51e780e964.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/43c2edcf044fdba4c5ab1d3018f1bedc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/62dd3ac633a21fb745a12e54f6e73d54.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/6fc84bc3abadcce42d6713d7bb65ec1f.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/8c3852d0fd6851a0e9930bd18813e714.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/b3e6cda04f2ce68f96f924dd1bc54edd.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/b63d6da14478746c2347962ba630b25a.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/cdd1a6e56d8f6c17e3531f390accc85b.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/d21e2c822c5686509058e23daaca15dd.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/d65bbc58f5670cc534b6273034ddacd0.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/e36f4b88fd329a9e7608286e52dcd963.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/e7792134f43b42692dc47d8d6cc3c8b6.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/faa72b861c8b4acd97f4edfa2ff61434.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OfferController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OfferController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/deps/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/assets/app-5c927428.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/assets/app-5c927428.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/assets/app-e222c7da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/company/editOffer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/editOffer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/company/registerOffer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/company/registerOffer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index/loginCandidate.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index/registerCandidate.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/B0as8nbmm1OpEfw2elr3IEhF7YIUc0T7hFfoRgTm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/d5wNaLNavgvgWOJ9OrHBHSsFIIzk1VyKTaD2kKqR" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/gyCZk7Uv3sm1hXkgcmFwTTyZsPdrf7CsLLoCqptP" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/lhwirLPOThoI0WWTwJGxuIODzb9RAuWu64IQJs3n" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/rJ4lQtxNGbuwk70os3Fxe8Y2AX6S9CUElev3EEGe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/wC8Y1HNUUsFTzhvGd8165Bud12ptoh3FFOleBIYX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,6 +200,7 @@
       <workItem from="1695737233895" duration="4618000" />
       <workItem from="1695775951330" duration="7639000" />
       <workItem from="1695861701053" duration="5227000" />
+      <workItem from="1695867588209" duration="1351000" />
     </task>
     <servers />
   </component>
