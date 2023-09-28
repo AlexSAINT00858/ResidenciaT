@@ -19,7 +19,8 @@
         <!-- description-->
         <div class="mt-4">
             <x-input-label for="descriptionOffer" :value="__('Description')" />
-            <x-text-input id="descriptionOffer" class="block mt-1 w-full" type="text" name="descriptionOffer" :value="old('descriptionOffer', $offerSelected->first()->descriptionOffer)" required autofocus autocomplete="descriptionOffer" />
+{{--            <x-text-input id="descriptionOffer" class="block mt-1 w-full" type="text" name="descriptionOffer" :value="old('descriptionOffer', $offerSelected->first()->descriptionOffer)" required autofocus autocomplete="descriptionOffer" />--}}
+            <textarea id="descriptionOffer" class="block mt-1 w-full" name="descriptionOffer" rows="7" :value="old('descriptionOffer', $offerSelected->first()->descriptionOffer)" required autofocus autocomplete="descriptionOffer" ><?php echo $offerSelected->first()->descriptionOffer; ?></textarea>
             <x-input-error :messages="$errors->get('descriptionOffer')" class="mt-2" />
         </div>
 

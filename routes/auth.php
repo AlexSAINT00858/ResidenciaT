@@ -44,10 +44,14 @@ Route::middleware('auth')->group(function () {
     //Para llevar un control de que oferta editar
     Route::get('/editOffer/{idOffer}', [OfferController::class, 'showEditOffer'])->name('editOffer');
     Route::post('/editOffer/{idOffer}', [OfferController::class, 'editOffer'])->name('editOffer');
-    
+
     //Eliminar card
     Route::get('/deleteOffer/{idOffer}', [OfferController::class, 'deleteOffer'])
     ->name('deleteOffer');
+
+    //Mostrar todas las ofertas sin importar si ya fueron eliminada
+    Route::get('/showHistory', [OfferController::class, 'showHistory'])
+    ->name('showHistory');
 
     //Mostrar postulantes de una oferta
     Route::get('/getCandidatesByOffer/{idOffer}', [OfferController::class, 'getCandidatesByOffer'])
@@ -55,7 +59,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/deleteJobApplication/{idJobApplication}/{idOffer}', [OfferController::class, 'deleteJobApplication'])
     ->name('deleteJobApplication');
-    
+
     // Route::get('verify-email', EmailVerificationPromptController::class)
     //             ->name('verification.notice');
 

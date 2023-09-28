@@ -23,7 +23,7 @@
                         @foreach ($offerts as $offer)
                             <div class="col" >
                                 <div class="card h-100">
-                                    {{-- para la imagen seria asi 
+                                    {{-- para la imagen seria asi
                                         {{ Auth::user()->logo }}
                                         --}}
                                     <img src="{{ asset('images/empresa.png') }}" class="card-img-top" alt="...">
@@ -37,7 +37,6 @@
                                         <br>
                                         <a href="/editOffer/{{ $offer->idOffer }}" class="btn btn-outline-primary btn-sm">Editar</a>
                                         <a href="/deleteOffer/{{ $offer->idOffer }}" class="btn btn-outline-secondary btn-sm deleteCard">Eliminar</a>
-                                        <a href="/getCandidatesByOffer/{{ $offer->idOffer }}" class="btn btn-outline-success btn-sm">Ver vacantes</a>
                                     </div>
                                 </div>
                             </div>

@@ -19,8 +19,7 @@
     @endsection
     @section('menu')
         <li><a href="/">Inicio</a></li>
-        <li><a href="/login">Iniciar Sesion como Empresa</a></li>
-        <li><a href="/register">Registrar Empresa</a></li>
+        <li><a href="/login">Iniciar Sesión</a></li>
     @endsection
 
     @section('contenido')
