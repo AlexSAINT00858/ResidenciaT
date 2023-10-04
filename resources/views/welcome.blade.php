@@ -88,12 +88,18 @@
             <div class="col">
                 <div class="modal-body">
                     <div class="image-container">
-                        <a href="{{ asset('images/OFERTA.png') }}" target="_blank">
-                            <img src="{{ asset('images/OFERTA.png') }}" class="card-img" alt="...">
+                        <a href="{{ asset('images/OFERTA.png') }}" onclick="return abrirAmpliar(this);">
+                            <img src="{{ asset('images/OFERTA.png') }}" class="card-img" alt="Imagen">
                         </a>
                     </div>
                 </div>
             </div>
+            <script>
+                function abrirAmpliar(enlace) {
+                    window.open(enlace.href, 'Ampliar', 'width=800,height=600');
+                    return false;
+                }
+            </script>
             <div class="col">
                 <div class="card" style="width: 20rem;">
                     <img class="card-img-top" src="{{ asset('images/TELMEX.png') }}" alt="Image">
@@ -112,12 +118,18 @@
             <div class="col">
                 <div class="modal-body">
                     <div class="image-container">
-                        <a href="{{ asset('images/OFERTA.png') }}" target="_blank">
-                            <img src="{{ asset('images/OFERTA.png') }}" class="card-img" alt="...">
+                        <a href="{{ asset('images/OFERTA.png') }}" onclick="return abrirAmpliar(this);">
+                            <img src="{{ asset('images/OFERTA.png') }}" class="card-img" alt="Imagen">
                         </a>
                     </div>
                 </div>
             </div>
+            <script>
+                function abrirAmpliar(enlace) {
+                    window.open(enlace.href, 'Ampliar', 'width=800,height=600');
+                    return false;
+                }
+            </script>
             <div class="col">
                 <div class="card" style="width: 20rem;">
                     <img class="card-img-top" src="{{ asset('images/CFE.png') }}" alt="Image">
@@ -178,6 +190,7 @@
                     </div>
                 </div>
             </div>
+
             <!--
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
