@@ -88,19 +88,50 @@
                 </div>
             </div>
             <div class="col">
-                <div class="modal-body">
-                    <div class="image-container">
-                        <a href="<?php echo e(asset('images/OFERTA.png')); ?>" onclick="return abrirAmpliar(this);">
-                            <img src="<?php echo e(asset('images/OFERTA.png')); ?>" class="card-img" alt="Imagen">
-                        </a>
-                    </div>
+                <div class="image-container">
+                    <img src="<?php echo e(asset('images/OFERTA.png')); ?>" class="card-img" alt="Imagen" id="imagen-ampliada">
                 </div>
             </div>
             <script>
-                function abrirAmpliar(enlace) {
-                    window.open(enlace.href, 'Ampliar', 'width=800,height=600');
-                    return false;
-                }
+                var imagen = document.getElementById('imagen-ampliada');
+                var zoomLevel = 100;
+
+                imagen.addEventListener('click', function () {
+                    var overlay = document.createElement('div');
+                    overlay.className = 'overlay';
+
+                    var imagenAmpliada = document.createElement('img');
+                    imagenAmpliada.src = imagen.src;
+                    imagenAmpliada.className = 'imagen-ampliada';
+
+                    imagenAmpliada.style.width = zoomLevel + '%';
+
+                    overlay.appendChild(imagenAmpliada);
+
+                    var boton1 = document.createElement('button');
+                    boton1.textContent = '+';
+                    boton1.className = 'boton';
+                    overlay.appendChild(boton1);
+
+                    var boton2 = document.createElement('button');
+                    boton2.textContent = '-';
+                    boton2.className = 'boton';
+                    overlay.appendChild(boton2);
+
+                    document.body.appendChild(overlay);
+
+                    overlay.addEventListener('click', function (event) {
+                        if (event.target === boton1) {
+                            zoomLevel += 10;
+                            imagenAmpliada.style.width = zoomLevel + '%';
+                        } else if (event.target === boton2) {
+                            zoomLevel -= 10;
+                            imagenAmpliada.style.width = zoomLevel + '%';
+                        } else {
+                            document.body.removeChild(overlay);
+                        }
+                    });
+                });
             </script>
             <div class="col">
                 <div class="card" style="width: 20rem;">
@@ -118,19 +149,50 @@
                 </div>
             </div>
             <div class="col">
-                <div class="modal-body">
-                    <div class="image-container">
-                        <a href="<?php echo e(asset('images/OFERTA.png')); ?>" onclick="return abrirAmpliar(this);">
-                            <img src="<?php echo e(asset('images/OFERTA.png')); ?>" class="card-img" alt="Imagen">
-                        </a>
-                    </div>
+                <div class="image-container">
+                    <img src="<?php echo e(asset('images/OFERTA.png')); ?>" class="card-img" alt="Imagen" id="imagen-ampliada2">
                 </div>
             </div>
             <script>
-                function abrirAmpliar(enlace) {
-                    window.open(enlace.href, 'Ampliar', 'width=800,height=600');
-                    return false;
-                }
+                var imagen = document.getElementById('imagen-ampliada2');
+                var zoomLevel = 100;
+
+                imagen.addEventListener('click', function () {
+                    var overlay = document.createElement('div');
+                    overlay.className = 'overlay';
+
+                    var imagenAmpliada = document.createElement('img');
+                    imagenAmpliada.src = imagen.src;
+                    imagenAmpliada.className = 'imagen-ampliada';
+
+                    imagenAmpliada.style.width = zoomLevel + '%';
+
+                    overlay.appendChild(imagenAmpliada);
+
+                    var boton1 = document.createElement('button');
+                    boton1.textContent = '+';
+                    boton1.className = 'boton';
+                    overlay.appendChild(boton1);
+
+                    var boton2 = document.createElement('button');
+                    boton2.textContent = '-';
+                    boton2.className = 'boton';
+                    overlay.appendChild(boton2);
+
+                    document.body.appendChild(overlay);
+
+                    overlay.addEventListener('click', function (event) {
+                        if (event.target === boton1) {
+                            zoomLevel += 10;
+                            imagenAmpliada.style.width = zoomLevel + '%';
+                        } else if (event.target === boton2) {
+                            zoomLevel -= 10;
+                            imagenAmpliada.style.width = zoomLevel + '%';
+                        } else {
+                            document.body.removeChild(overlay);
+                        }
+                    });
+                });
             </script>
             <div class="col">
                 <div class="card" style="width: 20rem;">
