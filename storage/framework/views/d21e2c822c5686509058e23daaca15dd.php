@@ -7,20 +7,20 @@
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
-    <img src="<?php echo e(asset('images/anadir.png')); ?>" style="width: 20%; margin:auto" alt="">
-    
-    
-    
-    
-    <label for="">Escoja la opcion de regitro</label>
+    <img src="<?php echo e(asset('images/anadir.png')); ?>" style="width: 20%; margin: 10px auto" alt="">
+
+
+
+
+    <label for="" class="mx-2">Escoja la opcion de regitro</label>
     <select name="optionForm" id="selectForm">
         <option value="0">Rellenar</option>
         <option value="1">Imagen</option>
     </select>
-    
+
     <div id="formRellenar">
         <form method="POST" action="/registerOffer">
-            
+
             <?php echo csrf_field(); ?>
             <!-- Name Offer-->
             <div class="mt-4">
@@ -88,8 +88,8 @@
 <?php $component = $__componentOriginal71c6471fa76ce19017edc287b6f4508c; ?>
 <?php unset($__componentOriginal71c6471fa76ce19017edc287b6f4508c); ?>
 <?php endif; ?>
-                
-                
+
+
                 <textarea id="inputDescriptionEs" class="form-control" name="description_es"
                           rows="7" required></textarea>
                 <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
@@ -157,7 +157,7 @@
 <?php unset($__componentOriginal71c6471fa76ce19017edc287b6f4508c); ?>
 <?php endif; ?>
             </div>
-            
+
             <input type="hidden" name="optionForm" value="0">
             <div class="flex items-center justify-end mt-4">
                 <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
@@ -180,14 +180,14 @@
             </div>
         </form>
     </div>
-    
+
     <div id="formImg">
         <form method="POST" action="/registerOffer">
-            
+
             <?php echo csrf_field(); ?>
             <labe>Elija su imagen</labe>
             <input type="file" name="img" id="" required>
-            
+
             <input type="hidden" name="optionForm" value="1">
             <div class="flex items-center justify-end mt-4">
                 <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
@@ -218,4 +218,4 @@
 <?php endif; ?>
 
 <?php echo app('Illuminate\Foundation\Vite')(['resources/js/appRegisterOffer.js']); ?>
-<?php /**PATH /home/jantonio/projectsLaravel/EMPLEATV2/resources/views/company/registerOffer.blade.php ENDPATH**/ ?>
+<?php /**PATH /home/jantonio/projectsLaravel/EMPLEATV2/resources/views/admin/registerOffer.blade.php ENDPATH**/ ?>

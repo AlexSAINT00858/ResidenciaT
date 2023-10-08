@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c3291b5-d3ca-4532-a578-036ef0f60544" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/1N2uSY9aUqf3E0qAaR2GJhOHCOZDeAW7f9TpgTCC" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/5CwjCAnhIrgrnUGwI9avnlRTJDu5iNBL1eYytPoX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/ChSCklenKeEEgvTboKW5fDYUxzxQyZFhpT4bsoW4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/aVVylqxZC41rcREPVgp86dfUSFhXKmrJgmx2cmuC" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/mQWJqigetsBbuu2hJd8GjiTCSIk4LWx33xCOlmLa" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/39188336bc55d928fe0b5e85beb679f3.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/39188336bc55d928fe0b5e85beb679f3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/a30e9b8862d6963e9626c350e2911f80.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/a30e9b8862d6963e9626c350e2911f80.php" afterDir="false" />
+>>>>>>> addViewAdmin
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,6 +215,14 @@
       <workItem from="1695775951330" duration="7639000" />
       <workItem from="1695861701053" duration="5227000" />
       <workItem from="1695867588209" duration="1351000" />
+      <workItem from="1695869629273" duration="146000" />
+      <workItem from="1696270989507" duration="10204000" />
+      <workItem from="1696563760108" duration="2006000" />
+      <workItem from="1696598459368" duration="3392000" />
+      <workItem from="1696606166576" duration="7747000" />
+      <workItem from="1696701061396" duration="38000" />
+      <workItem from="1696701961801" duration="11124000" />
+      <workItem from="1696789412551" duration="3008000" />
     </task>
     <servers />
   </component>

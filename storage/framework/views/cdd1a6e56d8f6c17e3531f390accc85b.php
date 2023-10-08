@@ -18,8 +18,12 @@
         <img class="text-uppercase text-primary mb-1 logo" src="<?php echo e(asset('images/ITT.png')); ?>" alt="Image">
     <?php $__env->stopSection(); ?>
     <?php $__env->startSection('menu'); ?>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/login">Iniciar Sesión</a></li>
+        <li class="nav-item">
+            <a class="nav-link active btn-outline-light" aria-current="page" href="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/login">Iniciar Sesión</a>
+        </li>
     <?php $__env->stopSection(); ?>
 
     <?php $__env->startSection('contenido'); ?>
