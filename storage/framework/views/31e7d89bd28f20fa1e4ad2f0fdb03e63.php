@@ -11,7 +11,7 @@
         <img src="<?php echo e(asset('images/anadir.png')); ?>" style="width: 20%" alt="">
     </center>
     <form method="POST" action="/registerOffer">
-        
+
         <?php echo csrf_field(); ?>
 
         <!-- Name Offer-->
@@ -186,4 +186,4 @@
 <?php if (isset($__componentOriginal69dc84650370d1d4dc1b42d016d7226b)): ?>
 <?php $component = $__componentOriginal69dc84650370d1d4dc1b42d016d7226b; ?>
 <?php unset($__componentOriginal69dc84650370d1d4dc1b42d016d7226b); ?>
-<?php endif; ?><?php /**PATH /home/jantonio/projectsLaravel/EmpleaTV2/resources/views/company/registerOffer.blade.php ENDPATH**/ ?>
+<?php endif; ?><?php /**PATH /home/jantonio/projectsLaravel/EmpleaTV2/resources/views/admin/registerOffer.blade.php ENDPATH**/ ?>

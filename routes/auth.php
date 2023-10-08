@@ -9,14 +9,15 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
-use App\Http\Controllers\OfferController;
+    use App\Http\Controllers\CompanyController;
+    use App\Http\Controllers\OfferController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
-    Route::get('register', [RegisteredUserController::class, 'create'])
-                ->name('register');
-
-    Route::post('register', [RegisteredUserController::class, 'store']);
+//    Route::get('register', [RegisteredUserController::class, 'create'])
+//                ->name('register');
+//
+//    Route::post('register', [RegisteredUserController::class, 'store']);
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
@@ -37,8 +38,20 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/registerOffer', [OfferController::class, 'showRegisterOffer'])->name('registerOffer');
-    Route::post('/registerOffer', [OfferController::class, 'registerOffer'])->name('registerOffer');
+    //Rutas para las acciones de las compañias
+    Route::get('/registerCompany', [CompanyController::class, 'showRegisterCompany'])
+        ->name('registerCompany');
+    Route::post('/registerCompany', [CompanyController::class, 'registerCompany'])
+        ->name('registerCompany');
+    Route::get('/viewCompanies', [CompanyController::class, 'showAllCompanies'])
+        ->name('showAllCompanies');
+    Route::get('/editCompany/{idCompany}', [CompanyController::class, 'showEditCompany'])->name('editCompany');
+    Route::post('/editCompany/{idCompany}', [CompanyController::class, 'editCompany'])->name('editCompany');
+    //Rutas para las acciones de las ofertas de empleo
+    Route::get('/registerOffer', [OfferController::class, 'showRegisterOffer'])
+        ->name('registerOffer');
+    Route::post('/registerOffer', [OfferController::class, 'registerOffer'])
+        ->name('registerOffer');
     //editar offerta
     //Capturamos la variable que nos proporciona la vista por medio del post
     //Para llevar un control de que oferta editar
@@ -52,10 +65,6 @@ Route::middleware('auth')->group(function () {
     //Mostrar todas las ofertas sin importar si ya fueron eliminada
     Route::get('/showHistory', [OfferController::class, 'showHistory'])
     ->name('showHistory');
-
-    //Mostrar postulantes de una oferta
-    Route::get('/getCandidatesByOffer/{idOffer}', [OfferController::class, 'getCandidatesByOffer'])
-    ->name('getCandidatesByOffer');
 
     Route::get('/deleteJobApplication/{idJobApplication}/{idOffer}', [OfferController::class, 'deleteJobApplication'])
     ->name('deleteJobApplication');

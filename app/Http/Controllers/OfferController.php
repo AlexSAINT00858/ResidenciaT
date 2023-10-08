@@ -26,7 +26,7 @@
         {
             //si existe un usuario autenticado refirigirlo a registrar la oferta
             if (Auth::check()) {
-                return view('company.registerOffer');
+                return view('admin.registerOffer');
             }
             return view('/home');
         }
@@ -40,7 +40,7 @@
                 $offerSelected = Offer::getOfferById($idOffer);
                 // devolvemos un objeto con los datos de la oferta seleccionada
                 // a la respectiva vista
-                return view('company.editOffer', ['offerSelected' => $offerSelected]);
+                return view('admin.editOffer', ['offerSelected' => $offerSelected]);
             }
             return view('/home');
         }
@@ -55,7 +55,7 @@
             if (Auth::check()) {
                 $offerts = Offer::getAllOfferts();
                 // redireccionamos los datos a nuestra vista
-                return view('company.showHistory', ['offerts' => $offerts]);
+                return view('admin.showHistory', ['offerts' => $offerts]);
             }
             return view('/home');
         }
@@ -69,11 +69,11 @@
                 // foreach ($jobsApplications as $jobApplication) {
                 //     array_push($dataCandidates, Candidate::getCandidatesById($jobApplication->CURP));
                 // }
-                // return view('company.vacantes', ['candidates' => $dataCandidates]);
+                // return view('admin.vacantes', ['candidates' => $dataCandidates]);
                 foreach ($jobsApplications as $jobApplication) {
                     $jobApplication->dataCandidate = Candidate::getCandidatesById($jobApplication->CURP)->first();
                 }
-                return view('company.vacantes', ['dataJobApplications' => $jobsApplications]);
+                return view('admin.vacantes', ['dataJobApplications' => $jobsApplications]);
             } catch (\Exception $e) {
                 // Manejar cualquier error que pueda ocurrir durante la eliminación
                 return redirect('/dashboard')->with('danger', 'Ha Ocurrido un error' . $e);

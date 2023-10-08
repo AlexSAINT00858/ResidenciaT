@@ -10,9 +10,9 @@
     <center>
         <img src="<?php echo e(asset('images/editar.jpg')); ?>" style="width:25%;" alt="">
     </center>
-    
+
     <form method="POST" action="/editOffer/<?php echo e($offerSelected->first()->idOffer); ?>">
-        
+
         <?php echo csrf_field(); ?>
         <!-- Name Offer-->
         <div class="mt-4">
@@ -174,4 +174,4 @@
 <?php $component = $__componentOriginal69dc84650370d1d4dc1b42d016d7226b; ?>
 <?php unset($__componentOriginal69dc84650370d1d4dc1b42d016d7226b); ?>
 <?php endif; ?>
-<?php /**PATH /home/jantonio/projectsLaravel/EMPLEATV2/resources/views/company/editOffer.blade.php ENDPATH**/ ?>
+<?php /**PATH /home/jantonio/projectsLaravel/EMPLEATV2/resources/views/admin/editOffer.blade.php ENDPATH**/ ?>

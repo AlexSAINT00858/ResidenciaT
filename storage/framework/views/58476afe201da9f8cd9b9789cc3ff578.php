@@ -7,7 +7,7 @@
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
-     <?php $__env->slot('header', null, []); ?> 
+     <?php $__env->slot('header', null, []); ?>
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             <?php echo e(__('Historial')); ?>
 
@@ -27,7 +27,7 @@
                     <?php $__currentLoopData = $offerts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $offer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col">
                             <div class="card h-100">
-                                
+
                                 <img src="<?php echo e(asset('images/empresa.png')); ?>" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title fw-bold fs-5"><?php echo e($offer->offerName); ?></h5>
@@ -49,4 +49,4 @@
         </div>
     </div>
 </div>
-<?php /**PATH /home/jantonio/projectsLaravel/EMPLEATV2/resources/views/company/showHistory.blade.php ENDPATH**/ ?>
+<?php /**PATH /home/jantonio/projectsLaravel/EMPLEATV2/resources/views/admin/showHistory.blade.php ENDPATH**/ ?>

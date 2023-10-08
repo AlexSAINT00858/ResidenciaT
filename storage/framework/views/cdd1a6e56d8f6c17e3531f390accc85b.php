@@ -18,8 +18,12 @@
         <img class="text-uppercase text-primary mb-1 logo" src="<?php echo e(asset('images/ITT.png')); ?>" alt="Image">
     <?php $__env->stopSection(); ?>
     <?php $__env->startSection('menu'); ?>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/login">Iniciar Sesión</a></li>
+        <li class="nav-item">
+            <a class="nav-link active btn-outline-light" aria-current="page" href="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/login">Iniciar Sesión</a>
+        </li>
     <?php $__env->stopSection(); ?>
 
     <?php $__env->startSection('contenido'); ?>
@@ -74,17 +78,25 @@
             <br>
             <div class="col">
                 <div class="card" style="width: 20rem;">
-                    <img class="zoom" src="<?php echo e(asset('images/CISCO.png')); ?>" alt="Image">
+                    <img class="card-img-top" src="<?php echo e(asset('images/CISCO.png')); ?>" alt="Image">
                     <div class="card-body">
                         <h5 class="card-title">EMPLEO</h5>
                         <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">FECHA</li>
                                 <li class="list-group-item">SALARIO (OPCIONAL)</li>
-                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">FECHA</li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="modal-body">
+                    <div class="image-container">
+                        <a href="<?php echo e(asset('images/OFERTA.png')); ?>" target="_blank">
+                            <img src="<?php echo e(asset('images/OFERTA.png')); ?>" class="card-img" alt="...">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -96,9 +108,32 @@
                         <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">FECHA</li>
                                 <li class="list-group-item">SALARIO (OPCIONAL)</li>
-                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">FECHA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="modal-body">
+                    <div class="image-container">
+                        <a href="<?php echo e(asset('images/OFERTA.png')); ?>" target="_blank">
+                            <img src="<?php echo e(asset('images/OFERTA.png')); ?>" class="card-img" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" src="<?php echo e(asset('images/CFE.png')); ?>" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">EMPLEO</h5>
+                        <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">SALARIO (OPCIONAL)</li>
+                                <li class="list-group-item">FECHA</li>
                             </ul>
                         </div>
                     </div>
@@ -112,9 +147,8 @@
                         <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">FECHA</li>
                                 <li class="list-group-item">SALARIO (OPCIONAL)</li>
-                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">FECHA</li>
                             </ul>
                         </div>
                     </div>
@@ -128,9 +162,8 @@
                         <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">FECHA</li>
                                 <li class="list-group-item">SALARIO (OPCIONAL)</li>
-                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">FECHA</li>
                             </ul>
                         </div>
                     </div>
@@ -144,25 +177,8 @@
                         <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">FECHA</li>
                                 <li class="list-group-item">SALARIO (OPCIONAL)</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 20rem;">
-                    <img class="card-img-top" src="<?php echo e(asset('images/GOB.png')); ?>" alt="Image">
-                    <div class="card-body">
-                        <h5 class="card-title">EMPLEO</h5>
-                        <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div class="card" style="width: 18rem;">
-                            <ul class="list-group list-group-flush">
                                 <li class="list-group-item">FECHA</li>
-                                <li class="list-group-item">SALARIO (OPCIONAL)</li>
-                                <li class="list-group-item">A third item</li>
                             </ul>
                         </div>
                     </div>

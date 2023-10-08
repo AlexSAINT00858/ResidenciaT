@@ -7,8 +7,8 @@
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
-     <?php $__env->slot('header', null, []); ?> 
-        
+     <?php $__env->slot('header', null, []); ?>
+
      <?php $__env->endSlot(); ?>
     <?php if(session('danger')): ?>
         <div class="alert alert-danger">
@@ -54,4 +54,4 @@
 <?php $component = $__componentOriginal9ac128a9029c0e4701924bd2d73d7f54; ?>
 <?php unset($__componentOriginal9ac128a9029c0e4701924bd2d73d7f54); ?>
 <?php endif; ?>
-<?php /**PATH /home/jantonio/projectsLaravel/EMPLEATV2/resources/views/company/vacantes.blade.php ENDPATH**/ ?>
+<?php /**PATH /home/jantonio/projectsLaravel/EMPLEATV2/resources/views/admin/vacantes.blade.php ENDPATH**/ ?>
