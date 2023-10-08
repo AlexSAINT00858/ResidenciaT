@@ -74,20 +74,65 @@
             <br>
             <div class="col">
                 <div class="card" style="width: 20rem;">
-                    <img class="zoom" src="<?php echo e(asset('images/CISCO.png')); ?>" alt="Image">
+                    <img class="card-img-top" src="<?php echo e(asset('images/CISCO.png')); ?>" alt="Image">
                     <div class="card-body">
                         <h5 class="card-title">EMPLEO</h5>
                         <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">FECHA</li>
                                 <li class="list-group-item">SALARIO (OPCIONAL)</li>
-                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">FECHA</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col">
+                <div class="image-container">
+                    <img src="<?php echo e(asset('images/OFERTA.png')); ?>" class="card-img" alt="Imagen" id="imagen-ampliada">
+                </div>
+            </div>
+            <script>
+                var imagen = document.getElementById('imagen-ampliada');
+                var zoomLevel = 100;
+
+                imagen.addEventListener('click', function () {
+                    var overlay = document.createElement('div');
+                    overlay.className = 'overlay';
+
+                    var imagenAmpliada = document.createElement('img');
+                    imagenAmpliada.src = imagen.src;
+                    imagenAmpliada.className = 'imagen-ampliada';
+
+                    imagenAmpliada.style.width = zoomLevel + '%';
+
+                    overlay.appendChild(imagenAmpliada);
+
+                    var boton1 = document.createElement('button');
+                    boton1.textContent = '+';
+                    boton1.className = 'boton';
+                    overlay.appendChild(boton1);
+
+                    var boton2 = document.createElement('button');
+                    boton2.textContent = '-';
+                    boton2.className = 'boton';
+                    overlay.appendChild(boton2);
+
+                    document.body.appendChild(overlay);
+
+                    overlay.addEventListener('click', function (event) {
+                        if (event.target === boton1) {
+                            zoomLevel += 10;
+                            imagenAmpliada.style.width = zoomLevel + '%';
+                        } else if (event.target === boton2) {
+                            zoomLevel -= 10;
+                            imagenAmpliada.style.width = zoomLevel + '%';
+                        } else {
+                            document.body.removeChild(overlay);
+                        }
+                    });
+                });
+            </script>
             <div class="col">
                 <div class="card" style="width: 20rem;">
                     <img class="card-img-top" src="<?php echo e(asset('images/TELMEX.png')); ?>" alt="Image">
@@ -96,9 +141,69 @@
                         <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">FECHA</li>
                                 <li class="list-group-item">SALARIO (OPCIONAL)</li>
-                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">FECHA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="image-container">
+                    <img src="<?php echo e(asset('images/OFERTA.png')); ?>" class="card-img" alt="Imagen" id="imagen-ampliada2">
+                </div>
+            </div>
+            <script>
+                var imagen = document.getElementById('imagen-ampliada2');
+                var zoomLevel = 100;
+
+                imagen.addEventListener('click', function () {
+                    var overlay = document.createElement('div');
+                    overlay.className = 'overlay';
+
+                    var imagenAmpliada = document.createElement('img');
+                    imagenAmpliada.src = imagen.src;
+                    imagenAmpliada.className = 'imagen-ampliada';
+
+                    imagenAmpliada.style.width = zoomLevel + '%';
+
+                    overlay.appendChild(imagenAmpliada);
+
+                    var boton1 = document.createElement('button');
+                    boton1.textContent = '+';
+                    boton1.className = 'boton';
+                    overlay.appendChild(boton1);
+
+                    var boton2 = document.createElement('button');
+                    boton2.textContent = '-';
+                    boton2.className = 'boton';
+                    overlay.appendChild(boton2);
+
+                    document.body.appendChild(overlay);
+
+                    overlay.addEventListener('click', function (event) {
+                        if (event.target === boton1) {
+                            zoomLevel += 10;
+                            imagenAmpliada.style.width = zoomLevel + '%';
+                        } else if (event.target === boton2) {
+                            zoomLevel -= 10;
+                            imagenAmpliada.style.width = zoomLevel + '%';
+                        } else {
+                            document.body.removeChild(overlay);
+                        }
+                    });
+                });
+            </script>
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" src="<?php echo e(asset('images/CFE.png')); ?>" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">EMPLEO</h5>
+                        <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">SALARIO (OPCIONAL)</li>
+                                <li class="list-group-item">FECHA</li>
                             </ul>
                         </div>
                     </div>
@@ -112,9 +217,8 @@
                         <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">FECHA</li>
                                 <li class="list-group-item">SALARIO (OPCIONAL)</li>
-                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">FECHA</li>
                             </ul>
                         </div>
                     </div>
@@ -128,9 +232,8 @@
                         <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">FECHA</li>
                                 <li class="list-group-item">SALARIO (OPCIONAL)</li>
-                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">FECHA</li>
                             </ul>
                         </div>
                     </div>
@@ -144,30 +247,14 @@
                         <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <div class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">FECHA</li>
                                 <li class="list-group-item">SALARIO (OPCIONAL)</li>
-                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">FECHA</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 20rem;">
-                    <img class="card-img-top" src="<?php echo e(asset('images/GOB.png')); ?>" alt="Image">
-                    <div class="card-body">
-                        <h5 class="card-title">EMPLEO</h5>
-                        <p class="card-text">DESCRIPCION: Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div class="card" style="width: 18rem;">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">FECHA</li>
-                                <li class="list-group-item">SALARIO (OPCIONAL)</li>
-                                <li class="list-group-item">A third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <!--
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
