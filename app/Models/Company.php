@@ -12,6 +12,7 @@ class Company extends Model
         private $name;
         private $address;
         private $phoneNumber;
+        private $email;
         private $logo;
 
         public function __constructor()
@@ -51,5 +52,9 @@ class Company extends Model
         public function setLogo($logo)
         {
             $this->logo = $logo;
+        }
+
+        public function setEmail($email) {
+            $this->email = $email;
         }
 }
