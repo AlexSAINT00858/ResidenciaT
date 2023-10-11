@@ -36,7 +36,7 @@
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-bg-light rounded p-2" role="button" data-bs-toggle="dropdown" aria-expanded="false"
            aria-current="page" href="">
-            {{ Auth::user()->nameCompany }}
+            {{ Auth::user()->name }}
         </a>
         <ul class="dropdown-menu">
             <li>

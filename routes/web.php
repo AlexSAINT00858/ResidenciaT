@@ -7,12 +7,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'show']);
 
-Route::get('/registerCandidate/{idOffer}', [IndexController::class, 'showRegisterCandidate']);
-Route::post('/registerCandidate/{idOffer}', [IndexController::class, 'registerCandidate']);
-
-Route::get('/loginCandidate/{idOffer}', [IndexController::class, 'showLoginCandidate']);
-Route::post('/loginCandidate/{idOffer}', [IndexController::class, 'loginCandidate']);
-
 Route::get('/dashboard', [OfferController::class, 'show'])
     ->middleware(['auth', 'verified'])->name('dashboard');
 

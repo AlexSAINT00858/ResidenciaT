@@ -16,9 +16,9 @@
         public function show()
         {
             // filtramos todas las ofertas de trabajo activas
-            $offerts = Offer::getAllOfferts();
+//            $offerts = Offer::getAllOfferts();
             // retornamos la vista con un arreglo que contiene todas las ofertas de empleo
-            return view('dashboard', ['offerts' => $offerts]);
+            return view('dashboard'/*,['offerts' => $offerts]*/);
         }
 
         //Muestra el formulario para regiatrar una oferta de trabajo
@@ -53,9 +53,9 @@
         {
             //si existe un usuario autenticado refirigirlo a registrar la oferta
             if (Auth::check()) {
-                $offerts = Offer::getAllOfferts();
+//                $offerts = Offer::getAllOfferts();
                 // redireccionamos los datos a nuestra vista
-                return view('admin.showHistory', ['offerts' => $offerts]);
+                return view('admin.showHistory'/*, ['offerts' => $offerts]*/);
             }
             return view('/home');
         }
