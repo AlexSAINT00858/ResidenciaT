@@ -33,11 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (event.target === boton1) {
                     zoomLevel += 10;
                     imagenAmpliada.style.width = zoomLevel + '%';
-                    console.log("+")
                 } else if (event.target === boton2) {
                     zoomLevel -= 10;
                     imagenAmpliada.style.width = zoomLevel + '%';
-                    console.log("-")
                 } else {
                     document.body.removeChild(overlay);
                 }
