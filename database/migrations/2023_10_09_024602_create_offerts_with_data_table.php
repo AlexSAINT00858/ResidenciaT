@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('offerts_with_data', function (Blueprint $table) {
             $table->string('offerName',100);
             $table->string('descriptionOffer',200);
-            $table->date('publicationDate')->primary();
+            $table->timestamp('publicationDate')->primary();
             $table->date('eliminationDate');
             $table->float('salary',10,2);
             $table->string('email',45);

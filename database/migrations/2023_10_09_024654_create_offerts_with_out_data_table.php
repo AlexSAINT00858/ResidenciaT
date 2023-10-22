@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('offerts_with_out_data', function (Blueprint $table) {
             $table->string('offerImage',20);
-            $table->date('publicationDate')->primary();
+            $table->timestamp('publicationDate')->primary();
             $table->date('eliminationDate');
             $table->string('email',45);
             $table->char('state',9);

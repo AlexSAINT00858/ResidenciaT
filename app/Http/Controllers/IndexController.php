@@ -3,6 +3,7 @@
     namespace App\Http\Controllers;
 
     use App\Models\OfferWithData;
+    use App\Models\OfferWithOutData;
     use Illuminate\Http\Request;
 
     class IndexController extends Controller
@@ -11,11 +12,18 @@
         public function show()
         {
             // filtramos todas las ofertas de trabajo de la empresa que ha iniciado sesion
-            $offer = new OfferWithData();
-            $offertsWithData = $offer->getAllOfferts();
+            $offer1 = new OfferWithData();
+            $offer2 = new OfferWithOutData();
+            $offertsWithData = $offer1->getAllOfferts();
+            $offertsWithOutData = $offer2->getAllOfferts();
+
+            $result = $offertsWithData->concat($offertsWithOutData);
+            $result = $result->sortBy('publicationDate');
 
             // retornamos la vista con un arreglo que contiene todas las ofertas de empleo
-            return view('welcome', ['offerts' => $offertsWithData]);
+            return view('welcome', [
+                'offerts' => $result
+            ]);
         }
 
 //        //actions
