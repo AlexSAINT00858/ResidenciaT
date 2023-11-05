@@ -5,7 +5,8 @@
         <div class="row w-75 m-auto">
             <img src="{{ asset('images/iniciar-sesion.jpg') }}" style="width: 40%" alt="" class="col-md-4 m-auto">
         </div>
-        <form method="POST" action="{{ route('login') }}" class="w-100 m-auto align-self-center my-3" style="text-align: center">
+        <form method="POST" action="{{ route('login') }}" class="w-100 m-auto align-self-center my-3"
+              style="text-align: center">
             @csrf
 
             <!-- Email Address -->

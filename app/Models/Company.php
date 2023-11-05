@@ -1,60 +1,45 @@
 <?php
 
-namespace App\Models;
+    namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;
+    use Illuminate\Database\Eloquent\Model;
 
-class Company extends Model
-{
-    use HasFactory;
+    class Company extends Model
+    {
+        use HasFactory;
 
-        private $name;
-        private $address;
-        private $phoneNumber;
-        private $email;
-        private $logo;
+        protected $table = 'companies';
+        protected $primaryKey = 'email';
+        /*
+         * Como estamos usando otro campo como llave primaria devemos indicar que no es autoincrementable
+         * ya que al hacer una consulta nos devolver 0
+         */
+        public $incrementing = false;
+        protected $fillable = [
+            'nameCompany',
+            'address',
+            'phoneNumber',
+            'email',
+            'logo'
+        ];
 
-        public function __constructor()
+        public static function getAllCompanies()
         {
-
+            return Company::select('email', 'nameCompany')->get();
         }
 
-        public function getCompanyById($idCompany)
+        public static function getCompanyById($idCompany)
         {
-            return "";
+            return Company::where('email', $idCompany)->get();
         }
 
-        public function registerCompany($data) {
-
-        }
-
-        public function getCompanies()
+        public static function getCompanies()
         {
-
+            return Company::select('nameCompany', 'address', 'phoneNumber', 'email', 'logo')->get();
         }
 
-        public function setName($name)
-        {
-            $this->name = $name;
+        public static function getLogoByIdCompany($idCompany) {
+            return Company::select('logo')->where('email', $idCompany)->get();
         }
-
-        public function setAddress($address)
-        {
-            $this->address = $address;
-        }
-
-        public function setPhoneNumber($phoneNumber)
-        {
-            $this->phoneNumber = $phoneNumber;
-        }
-
-        public function setLogo($logo)
-        {
-            $this->logo = $logo;
-        }
-
-        public function setEmail($email) {
-            $this->email = $email;
-        }
-}
+    }

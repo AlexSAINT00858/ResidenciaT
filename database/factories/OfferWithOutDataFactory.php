@@ -18,7 +18,7 @@
         {
             return [
                 'offerImage' => "empresa.png",
-                'publicationDate' => $this->faker->dateTimeBetween('-10 years','now'),
+                'publicationDate' => strval($this->faker->dateTimeBetween('-10 years','now')->format('Y-m-d H:i:s')),
                 'eliminationDate' => $this->faker->date,
                 'email' => $this->faker->randomElement(["osapat@gmail.com","ferrepat@gmail.com","corona@gmail.com","patsa@gmail.com"]),
                 'state' => $this->faker->randomElement(["active","inactive"])

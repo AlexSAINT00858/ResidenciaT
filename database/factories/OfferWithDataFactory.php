@@ -19,7 +19,7 @@
             return [
                 'offerName' => $this->faker->title,
                 'descriptionOffer' => $this->faker->title,
-                'publicationDate' => $this->faker->dateTimeBetween('-10 years','now'),
+                'publicationDate' => strval($this->faker->dateTimeBetween('-10 years','now')->format('Y-m-d H:i:s')),
                 'eliminationDate' => $this->faker->date,
                 'salary' => $this->faker->numberBetween(1,10000)/100,
                 'email' => $this->faker->randomElement(["osapat@gmail.com","ferrepat@gmail.com","corona@gmail.com","patsa@gmail.com"]),

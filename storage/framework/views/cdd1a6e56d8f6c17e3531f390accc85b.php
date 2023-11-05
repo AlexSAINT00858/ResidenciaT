@@ -82,7 +82,7 @@
                         <?php if($offer->offerName): ?>
                             <div class="col">
                                 <div class="card h-100">
-                                    <img src="<?php echo e(asset('images/trabajos.png')); ?>" class="card-img-top" alt="...">
+                                    <img src="<?php echo e(asset('imagesCompanies/'.$offer->logo)); ?>" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5 class="card-title fw-bold fs-5"><?php echo e($offer->offerName); ?></h5>
                                         <hr class="border border-danger border-1 opacity-75">
@@ -90,7 +90,7 @@
                                         <br>
                                         <p class="card-text">$<?php echo e($offer->salary); ?></p>
                                         <p class="card-text"><?php echo e($offer->email); ?></p>
-                                        <p class="card-text"><?php echo e($offer->publicationDate); ?></p>
+                                        <p class="card-text"><?php echo e($offer->fecha_convertida); ?></p>
                                     </div>
                                 </div>
                             </div>

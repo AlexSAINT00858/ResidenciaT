@@ -27,7 +27,8 @@
         <div class="row w-75 m-auto">
             <img src="<?php echo e(asset('images/iniciar-sesion.jpg')); ?>" style="width: 40%" alt="" class="col-md-4 m-auto">
         </div>
-        <form method="POST" action="<?php echo e(route('login')); ?>" class="w-100 m-auto align-self-center my-3" style="text-align: center">
+        <form method="POST" action="<?php echo e(route('login')); ?>" class="w-100 m-auto align-self-center my-3"
+              style="text-align: center">
             <?php echo csrf_field(); ?>
 
             <!-- Email Address -->

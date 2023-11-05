@@ -2,12 +2,15 @@
 
     namespace App\Http\Controllers;
 
+    use App\Http\Requests\OfferWithDataRequest;
+    use App\Http\Requests\OfferWithOutDataRequest;
+    use App\Models\Company;
+    use App\Models\OfferWithData;
+    use App\Models\OfferWithOutData;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Auth;
-    use App\Models\Offer;
-    use App\Models\JobApplication;
-    use App\Models\Candidate;
     use App\Http\Requests\OfferRequest;
+    use PHPUnit\Exception;
 
     class OfferController extends Controller
     {
@@ -16,9 +19,16 @@
         public function show()
         {
             // filtramos todas las ofertas de trabajo activas
-//            $offerts = Offer::getAllOfferts();
+            $offer1 = new OfferWithData();
+            $offer2 = new OfferWithOutData();
+            $offertsWithData = $offer1->getAllOffertsActivesForAdmin();
+            $offertsWithOutData = $offer2->getAllOffertsActivesForAdmin();
+
+            $result = $offertsWithData->concat($offertsWithOutData);
+            $result = $result->sortBy('publicationDate');
+
             // retornamos la vista con un arreglo que contiene todas las ofertas de empleo
-            return view('dashboard'/*,['offerts' => $offerts]*/);
+            return view('dashboard', ['offerts' => $result]);
         }
 
         //Muestra el formulario para regiatrar una oferta de trabajo
@@ -26,7 +36,8 @@
         {
             //si existe un usuario autenticado refirigirlo a registrar la oferta
             if (Auth::check()) {
-                return view('admin.registerOffer');
+                $companies = Company::getAllCompanies();
+                return view('admin.registerOffer', ['companies' => $companies]);
             }
             return view('/home');
         }
@@ -36,8 +47,9 @@
         {
             //si existe un usuario autenticado refirigirlo a registrar la oferta
             if (Auth::check()) {
+                $offer = new OfferWithData();
                 // filtramos a la oferta por medio del id de la oferta que ha seleccionado para editar
-                $offerSelected = Offer::getOfferById($idOffer);
+                $offerSelected = $offer->getOfferById($idOffer);
                 // devolvemos un objeto con los datos de la oferta seleccionada
                 // a la respectiva vista
                 return view('admin.editOffer', ['offerSelected' => $offerSelected]);
@@ -53,80 +65,110 @@
         {
             //si existe un usuario autenticado refirigirlo a registrar la oferta
             if (Auth::check()) {
-//                $offerts = Offer::getAllOfferts();
+                // filtramos todas las ofertas de trabajo activas
+                $offer1 = new OfferWithData();
+                $offer2 = new OfferWithOutData();
+                $offertsWithData = $offer1->getAllOffertsInactives();
+                $offertsWithOutData = $offer2->getAllOffertsInactives();
+
+                $result = $offertsWithData->concat($offertsWithOutData);
+                $result = $result->sortBy('publicationDate');
                 // redireccionamos los datos a nuestra vista
-                return view('admin.showHistory'/*, ['offerts' => $offerts]*/);
+                return view('admin.showHistory', ['offerts' => $result]);
             }
             return view('/home');
-        }
-
-        public function getCandidatesByOffer($idOffer)
-        {
-            try {
-                $jobsApplications = JobApplication::getJobApplicationByOffer($idOffer);
-
-                // $dataCandidates = [];
-                // foreach ($jobsApplications as $jobApplication) {
-                //     array_push($dataCandidates, Candidate::getCandidatesById($jobApplication->CURP));
-                // }
-                // return view('admin.vacantes', ['candidates' => $dataCandidates]);
-                foreach ($jobsApplications as $jobApplication) {
-                    $jobApplication->dataCandidate = Candidate::getCandidatesById($jobApplication->CURP)->first();
-                }
-                return view('admin.vacantes', ['dataJobApplications' => $jobsApplications]);
-            } catch (\Exception $e) {
-                // Manejar cualquier error que pueda ocurrir durante la eliminación
-                return redirect('/dashboard')->with('danger', 'Ha Ocurrido un error' . $e);
-            }
-
         }
 
         //actions
         // Se usa cuando acemos un post para registrar una oferta de empleo
         //Por medio de la clase OfferRequest validamos los datos que se registraran
-        public function registerOffer(OfferRequest $request)
+        public function registerOfferWithData(OfferWithDataRequest $request)
         {
-            //validamos los campos de la oferta
+            date_default_timezone_set("America/Mexico_City");
             $dataOffer = [
                 'offerName' => $request->validated()['offerName'],
                 'descriptionOffer' => $request->validated()['descriptionOffer'],
-                'publicationDate' => date('y-m-d'),
+                'publicationDate' => date('y-m-d H:i:s'),
+                'eliminationDate' => date('y-m-d'),
                 'salary' => $request->validated()['salary'],
-                'idCompany' => auth()->user()->id,
+                'email' => $request->input('idCompany'),
+                'state' => 'active'
             ];
             // realizamos la incersion de la nueva oferta pasando los atributos de la oferta
-            Offer::create($dataOffer);
+            OfferWithData::create($dataOffer);
             // Redireccionamos a la vista pricipal
-            return redirect('/dashboard')->with('success', 'Offer created successfully');
+            return redirect('/dashboard')->with('success', 'Se creo la oferta de empleo correctamente');
+        }
+
+        public function registerOfferWithOutData(OfferWithOutDataRequest $request)
+        {
+            date_default_timezone_set("America/Mexico_City");
+            $dataOffer = [
+                'offerImage' => $request->validated()['offerImage'],
+                'publicationDate' => date('y-m-d H:i:s'),
+                'eliminationDate' => date('y-m-d'),
+                'email' => $request->input('idCompany'),
+                'state' => 'active'
+            ];
+
+            //subir img
+            //Si se subio el curriculum registramos al usuario
+            $response = $this->saveImage($request);
+            if ($response[0]) {
+                $dataOffer['offerImage'] = $response[1];
+                // realizamos la incersion de la nueva oferta pasando los atributos de la oferta
+                OfferWithOutData::create($dataOffer);
+                // Redireccionamos a la vista pricipal
+                return redirect('/dashboard')->with('success', 'Se creo la oferta de empleo correctamente');
+            }
+            return redirect('/registerOffer')->with('danger', 'No ha ingresado un archivo de imagen.');
+        }
+
+        //subir la imagen de la oferta de empleo
+        private function saveImage($request): array
+        {
+            date_default_timezone_set("America/Mexico_City");
+            //Si se sube la imagen registramos a la oferta
+            if ($request->hasFile("offerImage")) {
+                $file = $request->file("offerImage");
+                $name = "offer_" . date('y-m-d H:i:s') . "." . $file->guessExtension();
+                $ruta = public_path("imagesOfferts/" . $name);
+                if ($file->guessExtension() == "jpg" || $file->guessExtension() == "png" || $file->guessExtension() == "jpeg") {
+                    copy($file, $ruta);
+                    return [true, $name];
+                }
+            }
+            return [false];
         }
 
         // metodo que utilizamos cuado hacemos un post para guardar la edicion de una oferta
         // Utilizamos dos parametros una para validar datos y otra que nos indica que oferta es la que editaremos
-        public function editOffer(OfferRequest $request, $idOffer)
+        public function editOffer(OfferWithDataRequest $request, $idOffer)
         {
+            date_default_timezone_set("America/Mexico_City");
             //validamos los campos de la oferta
             $dataOffer = [
                 'offerName' => $request->validated()['offerName'],
                 'descriptionOffer' => $request->validated()['descriptionOffer'],
-                'publicationDate' => date('y-m-d'),
+                'publicationDate' => date('Y-m-d H:i:s'),
                 'salary' => $request->validated()['salary'],
-                'idCompany' => auth()->user()->id,
             ];
             //Buscamos la oferta por medio de su id
-            $offerToChange = Offer::find($idOffer);
+            $offerToChange = OfferWithData::find($idOffer);
             // realizamos cambios a la oferta y las guardamos
             $offerToChange->update($request->all());
             //Redireccionamos a la pagina principal
-            return redirect('/dashboard')->with('success', 'Offer change successfully');
+            return redirect('/dashboard')->with('success', 'Se edito correctamente la oferta');
         }
 
-        public function deleteOffer($idOffer)
+        public function changeStateOfferWithData($idOffer)
         {
             try {
+                date_default_timezone_set("America/Mexico_City");
                 //Buscamos la oferta por medio de su id
-                $offerSelected = Offer::find($idOffer);
-                // eliminamos la oferta
-                $offerSelected->delete();
+                $offerToChange = OfferWithData::find($idOffer);
+                // realizamos cambios a la oferta y las guardamos
+                $offerToChange->update(['state' => 'inactive', 'eliminationDate' => date('Y-m-d')]);
 
                 return redirect('/dashboard')->with('success', 'Offer delete successfully');
             } catch (\Exception $e) {
@@ -136,18 +178,47 @@
 
         }
 
-        public function deleteJobApplication($idJobApplication, $idOffer)
+        public function changeStateOfferWithOutData($idOffer)
         {
             try {
+                date_default_timezone_set("America/Mexico_City");
                 //Buscamos la oferta por medio de su id
-                $JobApplicationSelected = JobApplication::find($idJobApplication);
-                // eliminamos la oferta
-                $JobApplicationSelected->delete();
+                $offerToChange = OfferWithOutData::find($idOffer);
+                // realizamos cambios a la oferta y las guardamos
+                $offerToChange->update(['state' => 'inactive', 'eliminationDate' => date('Y-m-d')]);
 
-                return redirect('/getCandidatesByOffer/' . $idOffer)->with('success', 'Se elimino el candidato');
+                return redirect('/dashboard')->with('success', 'Offer delete successfully');
             } catch (\Exception $e) {
                 // Manejar cualquier error que pueda ocurrir durante la eliminación
-                return redirect('/getCandidatesByOffer/' . $idOffer)->with('error', 'No se pudo eliminar el candidato' . $e);
+                return redirect('/dashboard')->with('error', 'could not delete offer' . $e);
+            }
+        }
+
+        public function deleteOfferWithOutData($idOffer)
+        {
+            try {
+                //Buscar la oferta por medio de su id
+                $offerSelected = OfferWithOutData::find($idOffer);
+                //Eliminamos la oferta de la bd
+                $offerSelected->delete();
+                return redirect('/showHistory')->with('success', 'Se elimino la oferta correctamente');
+            } catch (Exception $e) {
+                // Manejar cualquier error que pueda ocurrir durante la eliminación
+                return redirect('/showHistory')->with('error', 'No se pudo eliminar el candidato');
+            }
+        }
+
+        public function deleteOfferWithData($idOffer)
+        {
+            try {
+                //Buscar la oferta por medio de su id
+                $offerSelected = OfferWithData::find($idOffer);
+                //Eliminamos la oferta de la bd
+                $offerSelected->delete();
+                return redirect('/showHistory')->with('success', 'Se elimino correctamente');
+            } catch (Exception $e) {
+                // Manejar cualquier error que pueda ocurrir durante la eliminación
+                return redirect('/showHistory')->with('error', 'No se pudo eliminar el candidato');
             }
         }
     }

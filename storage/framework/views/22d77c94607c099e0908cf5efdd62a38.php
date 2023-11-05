@@ -19,32 +19,43 @@
 <?php $component = $__componentOriginal9ac128a9029c0e4701924bd2d73d7f54; ?>
 <?php unset($__componentOriginal9ac128a9029c0e4701924bd2d73d7f54); ?>
 <?php endif; ?>
+<?php if(session('danger')): ?>
+    <div class="alert alert-danger">
+        <?php echo e(session('danger')); ?>
+
+    </div>
+<?php endif; ?>
+
+<?php if(session('success')): ?>
+    <div class="alert alert-success">
+        <?php echo e(session('success')); ?>
+
+    </div>
+<?php endif; ?>
 <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-4">
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 text-gray-900 dark:text-gray-100">
-                <div class="row row-cols-1 row-cols-md-4 g-4 mx-auto container-fluid containerCards">
-
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="<?php echo e(asset('images/empresa.png')); ?>" class="card-img-top" alt="...">
-                            <div class="card-body text-center">
-                                <h5 class="card-title fw-bold fs-5">Nombre de la compañia</h5>
-                                <hr class="border border-danger border-1 opacity-75">
-                                <p class="card-text">Direccion</p>
-                                <br>
-                                <p class="card-text">Numero telefonico</p>
-
-                                <?php echo e($idCompany = "osapat@gmail.com"); ?>
-
-                                <a href="/editCompany/<?php echo e($idCompany); ?>"
-                                   class="btn btn-outline-primary btn-sm">Editar</a>
-                                <a href=""
-                                   class="btn btn-outline-secondary btn-sm deleteCard">Eliminar</a>
+            <div class="p-6 text-gray-900 dark:text-gray-100 sectionCards">
+                <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto container-fluid containerCards">
+                    <?php $__currentLoopData = $companies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $company): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="<?php echo e(asset('images/empresa.png')); ?>" class="card-img-top" alt="...">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fw-bold fs-5"><?php echo e($company->nameCompany); ?></h5>
+                                    <hr class="border border-danger border-1 opacity-75">
+                                    <p class="card-text"><?php echo e($company->address); ?></p>
+                                    <br>
+                                    <p class="card-text"><?php echo e($company->phoneNumber); ?></p>
+                                    <p class="card-text"><?php echo e($company->email); ?></p>
+                                    <a href="/editCompany/<?php echo e($company->email); ?>"
+                                       class="btn btn-outline-primary btn-sm">Editar</a>
+                                    <a href="/deleteCompany/<?php echo e($company->email); ?>"
+                                       class="btn btn-outline-secondary btn-sm deleteCard">Eliminar</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
         </div>
