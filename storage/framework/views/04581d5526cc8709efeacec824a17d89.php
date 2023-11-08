@@ -17,7 +17,8 @@
         <a class="nav-link" aria-current="page" href="/showHistory">Historial</a>
     </li>
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-bg-light rounded p-2" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+        <a class="nav-link dropdown-toggle text-bg-light rounded p-2" role="button" data-bs-toggle="dropdown"
+           aria-expanded="false"
            aria-current="page" href="">Empresas</a>
         <ul class="dropdown-menu">
             <li>
@@ -33,7 +34,8 @@
         </ul>
     </li>
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-bg-light rounded p-2" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+        <a class="nav-link dropdown-toggle text-bg-light rounded p-2" role="button" data-bs-toggle="dropdown"
+           aria-expanded="false"
            aria-current="page" href="">
             <?php echo e(Auth::user()->name); ?>
 
@@ -86,42 +88,7 @@
                 </form>
             </li>
         </ul>
-
     </li>
-    <!-- Settings Dropdown -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 <?php $__env->stopSection(); ?>
-
 
 <?php echo $__env->make('templetes.templete', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/jantonio/projectsLaravel/EMPLEATV2/resources/views/layouts/navigation.blade.php ENDPATH**/ ?>
