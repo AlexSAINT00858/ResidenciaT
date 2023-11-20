@@ -34,7 +34,7 @@
                         <?php if($offer->offerName): ?>
                             <div class="col">
                                 <div class="card h-100">
-                                    <img src="<?php echo e(asset('images/trabajos.png')); ?>" class="card-img-top" alt="...">
+                                    <img src="<?php echo e(asset('imagesCompanies/'.$offer->logo)); ?>" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5 class="card-title fw-bold fs-5"><?php echo e($offer->offerName); ?></h5>
                                         <hr class="border border-danger border-1 opacity-75">
@@ -54,7 +54,7 @@
                             <div class="col" style="width: 50%; text-align: center">
                                 <div class="card h-auto">
                                     <div class="image-container">
-                                        <img src="<?php echo e(asset('images/OFERTA.png')); ?>" class="card-img imagen-ampliada"
+                                        <img src="<?php echo e(asset('imagesOfferts/'.$offer->offerImage)); ?>" class="card-img imagen-ampliada"
                                              alt="Imagen" id="">
                                         <a href="/changeStateOfferWithOutData/<?php echo e($offer->fecha_convertida); ?>"
                                            class="btn btn-outline-secondary btn-sm deleteCard my-3">Eliminar</a>

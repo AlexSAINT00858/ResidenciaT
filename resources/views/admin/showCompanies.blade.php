@@ -24,7 +24,7 @@
                     @foreach($companies as $company)
                         <div class="col">
                             <div class="card h-100">
-                                <img src="{{ asset('images/empresa.png') }}" class="card-img-top" alt="...">
+                                <img src="{{ asset('imagesCompanies/'.$company->logo) }}" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title fw-bold fs-5">{{ $company->nameCompany }}</h5>
                                     <hr class="border border-danger border-1 opacity-75">

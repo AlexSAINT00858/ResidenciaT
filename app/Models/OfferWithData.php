@@ -25,20 +25,6 @@
 
         public function getAllOffertsActives()
         {
-//            return OfferWithData::with('company')
-//            ->select(
-//                'offerName',
-//                'descriptionOffer',
-//                DB::raw("DATE_FORMAT(publicationDate,'%Y-%m-%d') as fecha_convertida"),
-//                'eliminationDate',
-//                'salary',
-//                'email',
-//                'state',
-//                'logo'
-//            )
-//                ->join('companies', 'companies.email', '=', 'offerts_with_data.email')
-//                ->where('state', 'active')
-//                ->get();
             return OfferWithData::select(
                 'offerts_with_data.offerName',
                 'offerts_with_data.descriptionOffer',
@@ -92,15 +78,17 @@
 
         public function getAllOffertsActivesForAdmin()
         {
-            $resultado = OfferWithData::select(
-                'offerName',
-                'descriptionOffer',
-                DB::raw("DATE_FORMAT(publicationDate,'%Y-%m-%d %H:%i:%s') as fecha_convertida"),
-                'eliminationDate',
-                'salary',
-                'email',
-                'state',
-            )->where('state', 'active')->get();
-            return $resultado;
+            return OfferWithData::select(
+                'offerts_with_data.offerName',
+                'offerts_with_data.descriptionOffer',
+                DB::raw("DATE_FORMAT(offerts_with_data.publicationDate,'%Y-%m-%d %H:%i:%s') as fecha_convertida"),
+                'offerts_with_data.eliminationDate',
+                'offerts_with_data.salary',
+                'offerts_with_data.email',
+                'offerts_with_data.state',
+                'companies.logo'
+            )
+                ->join('companies', 'offerts_with_data.email', '=', 'companies.email')
+                ->get();
         }
     }

@@ -40,7 +40,7 @@
                     <?php $__currentLoopData = $companies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $company): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col">
                             <div class="card h-100">
-                                <img src="<?php echo e(asset('images/empresa.png')); ?>" class="card-img-top" alt="...">
+                                <img src="<?php echo e(asset('imagesCompanies/'.$company->logo)); ?>" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title fw-bold fs-5"><?php echo e($company->nameCompany); ?></h5>
                                     <hr class="border border-danger border-1 opacity-75">

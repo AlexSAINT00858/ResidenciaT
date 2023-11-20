@@ -96,7 +96,7 @@
                             <div class="col" style="width: 50%">
                                 <div class="card h-auto">
                                     <div class="image-container">
-                                        <img src="{{ asset('images/OFERTA.png') }}" class="card-img imagen-ampliada"
+                                        <img src="{{ asset('imagesOfferts/'.$offer->offerImage) }}" class="card-img imagen-ampliada"
                                              alt="Imagen" id="">
                                     </div>
                                 </div>

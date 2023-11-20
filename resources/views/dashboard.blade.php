@@ -23,7 +23,7 @@
                         @if($offer->offerName)
                             <div class="col">
                                 <div class="card h-100">
-                                    <img src="{{ asset('images/trabajos.png') }}" class="card-img-top" alt="...">
+                                    <img src="{{ asset('imagesCompanies/'.$offer->logo) }}" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5 class="card-title fw-bold fs-5">{{ $offer->offerName }}</h5>
                                         <hr class="border border-danger border-1 opacity-75">
@@ -43,7 +43,7 @@
                             <div class="col" style="width: 50%; text-align: center">
                                 <div class="card h-auto">
                                     <div class="image-container">
-                                        <img src="{{ asset('images/OFERTA.png') }}" class="card-img imagen-ampliada"
+                                        <img src="{{ asset('imagesOfferts/'.$offer->offerImage) }}" class="card-img imagen-ampliada"
                                              alt="Imagen" id="">
                                         <a href="/changeStateOfferWithOutData/{{ $offer->fecha_convertida }}"
                                            class="btn btn-outline-secondary btn-sm deleteCard my-3">Eliminar</a>
