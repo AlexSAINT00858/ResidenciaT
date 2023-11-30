@@ -38,7 +38,7 @@
         Route::post('/registerCompany', [CompanyController::class, 'registerCompany'])
             ->name('registerCompany');
         Route::get('/viewCompanies', [CompanyController::class, 'showAllCompanies'])
-            ->name('showAllCompanies');
+            ->name('viewCompanies');
         Route::get('/editCompany/{idCompany}', [CompanyController::class, 'showEditCompany'])
             ->name('editCompany');
         Route::post('/editCompany/{idCompany}', [CompanyController::class, 'editCompany'])

@@ -7,7 +7,7 @@
             Pasamos como atributo el id de la oferta la cual se ha modificado
             $offerSelected nos la proporciona el controlador el cual es un objeto que contiene los datos de la oferta a editar
         --}}
-        <form method="POST" action="/editOffer/{{ $offerSelected->first()->fecha_convertida }}"
+        <form method="POST" action="{{ route('editOffer',['idOffer' => $offerSelected->first()->fecha_convertida]) }}"
               class="w-100 m-auto align-self-center my-3" style="text-align: center">
             {{--        agrega campo oculto para poder manejar un token y evitar problemas de seguridad--}}
             @csrf

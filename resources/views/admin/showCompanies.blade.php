@@ -32,9 +32,9 @@
                                     <br>
                                     <p class="card-text">{{ $company->phoneNumber }}</p>
                                     <p class="card-text">{{ $company->email }}</p>
-                                    <a href="/editCompany/{{ $company->email }}"
+                                    <a href="{{ route('editCompany',['idCompany' => $company->email]) }}"
                                        class="btn btn-outline-primary btn-sm">Editar</a>
-                                    <a href="/deleteCompany/{{ $company->email }}"
+                                    <a href="{{ route('deleteCompany',['idCompany' => $company->email]) }}"
                                        class="btn btn-outline-secondary btn-sm deleteCard">Eliminar</a>
                                 </div>
                             </div>

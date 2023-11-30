@@ -8,13 +8,13 @@
 
 <?php $__env->startSection('menu'); ?>
     <li class="nav-item">
-        <a class="nav-link active btn-outline-light" aria-current="page" href="/dashboard">Inicio</a>
+        <a class="nav-link active btn-outline-light" aria-current="page" href="<?php echo e(route('dashboard')); ?>">Inicio</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="/registerOffer">Registrar Oferta</a>
+        <a class="nav-link" aria-current="page" href="<?php echo e(route('registerOffer')); ?>">Registrar Oferta</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="/showHistory">Historial</a>
+        <a class="nav-link" aria-current="page" href="<?php echo e(route('showHistory')); ?>">Historial</a>
     </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-bg-light rounded p-2" role="button" data-bs-toggle="dropdown"
@@ -22,13 +22,13 @@
            aria-current="page" href="">Empresas</a>
         <ul class="dropdown-menu">
             <li>
-                <a class="dropdown-item" href="/registerCompany">Registrar empresa</a>
+                <a class="dropdown-item" href="<?php echo e(route('registerCompany')); ?>">Registrar empresa</a>
             </li>
             <li>
                 <hr class="dropdown-divider">
             </li>
             <li>
-                <a class="dropdown-item" href="/viewCompanies">Ver empresas</a>
+                <a class="dropdown-item" href="<?php echo e(route('viewCompanies')); ?>">Ver empresas</a>
             </li>
 
         </ul>

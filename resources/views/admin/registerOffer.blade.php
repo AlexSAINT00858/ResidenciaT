@@ -21,7 +21,7 @@
         </div>
         {{--    este formulario envia varios datos al servidor--}}
         <div id="formRellenar">
-            <form method="POST" action="/registerOfferWithData" class="w-100 m-auto my-3"
+            <form method="POST" action="{{ route('registerOfferWithData') }}" class="w-100 m-auto my-3"
                   style="text-align: center; width: 40%">
                 {{-- agrega campo oculto para poder manejar un token y evitar problemas de seguridad--}}
                 @csrf
@@ -68,7 +68,7 @@
         </div>
         {{--    Este formulario solo envia una imagen al servidor--}}
         <div id="formImg">
-            <form method="POST" action="/registerOfferWithOutData" class="w-100 m-auto my-3" style="text-align: center" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('registerOfferWithOutData') }}" class="w-100 m-auto my-3" style="text-align: center" enctype="multipart/form-data">
                 {{-- agrega campo oculto para poder manejar un token y evitar problemas de seguridad--}}
                 @csrf
                 <div class="mt-4">

@@ -12,7 +12,7 @@
             <img src="<?php echo e(asset('images/editar.jpg')); ?>" style="width:20%;" class="col-md-4 m-auto" alt="">
         </div>
         
-        <form method="POST" action="/editOffer/<?php echo e($offerSelected->first()->fecha_convertida); ?>"
+        <form method="POST" action="<?php echo e(route('editOffer',['idOffer' => $offerSelected->first()->fecha_convertida])); ?>"
               class="w-100 m-auto align-self-center my-3" style="text-align: center">
             
             <?php echo csrf_field(); ?>

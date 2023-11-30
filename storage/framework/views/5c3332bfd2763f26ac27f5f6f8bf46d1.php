@@ -18,7 +18,7 @@
             </div>
         <?php endif; ?>
         
-        <form method="POST" action="/editCompany/<?php echo e($companySelected->first()->email); ?>" class="w-100 m-auto my-3"
+        <form method="POST" action="<?php echo e(route('editCompany',['idCompany' => $companySelected->first()->email])); ?>" class="w-100 m-auto my-3"
               style="text-align: center; width: 40%" enctype="multipart/form-data">
             
             <?php echo csrf_field(); ?>

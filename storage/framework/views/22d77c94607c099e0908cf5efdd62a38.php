@@ -48,9 +48,9 @@
                                     <br>
                                     <p class="card-text"><?php echo e($company->phoneNumber); ?></p>
                                     <p class="card-text"><?php echo e($company->email); ?></p>
-                                    <a href="/editCompany/<?php echo e($company->email); ?>"
+                                    <a href="<?php echo e(route('editCompany',['idCompany' => $company->email])); ?>"
                                        class="btn btn-outline-primary btn-sm">Editar</a>
-                                    <a href="/deleteCompany/<?php echo e($company->email); ?>"
+                                    <a href="<?php echo e(route('deleteCompany',['idCompany' => $company->email])); ?>"
                                        class="btn btn-outline-secondary btn-sm deleteCard">Eliminar</a>
                                 </div>
                             </div>

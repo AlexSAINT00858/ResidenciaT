@@ -22,7 +22,7 @@
         <a class="nav-link active btn-outline-light" aria-current="page" href="/">Inicio</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="/login">Iniciar Sesión</a>
+        <a class="nav-link" aria-current="page" href="<?php echo e(route('login')); ?>">Iniciar Sesión</a>
     </li>
 <?php $__env->stopSection(); ?>
 

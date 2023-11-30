@@ -30,7 +30,7 @@
         </div>
         
         <div id="formRellenar">
-            <form method="POST" action="/registerOfferWithData" class="w-100 m-auto my-3"
+            <form method="POST" action="<?php echo e(route('registerOfferWithData')); ?>" class="w-100 m-auto my-3"
                   style="text-align: center; width: 40%">
                 
                 <?php echo csrf_field(); ?>
@@ -201,7 +201,7 @@
         </div>
         
         <div id="formImg">
-            <form method="POST" action="/registerOfferWithOutData" class="w-100 m-auto my-3" style="text-align: center" enctype="multipart/form-data">
+            <form method="POST" action="<?php echo e(route('registerOfferWithOutData')); ?>" class="w-100 m-auto my-3" style="text-align: center" enctype="multipart/form-data">
                 
                 <?php echo csrf_field(); ?>
                 <div class="mt-4">

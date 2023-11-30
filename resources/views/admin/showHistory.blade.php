@@ -25,7 +25,7 @@
                         @if($offer->offerName)
                             <div class="col">
                                 <div class="card h-100">
-                                    <img src="{{ asset('images/trabajos.png') }}" class="card-img-top" alt="...">
+                                    <img src="{{ asset('imagesCompanies/'.$offer->logo) }}" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5 class="card-title fw-bold fs-5">{{ $offer->offerName }}</h5>
                                         <hr class="border border-danger border-1 opacity-75">

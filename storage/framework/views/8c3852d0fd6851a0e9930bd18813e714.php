@@ -43,9 +43,9 @@
                                         <p class="card-text">$<?php echo e($offer->salary); ?></p>
                                         <p class="card-text"><?php echo e($offer->email); ?></p>
                                         <p class="card-text"><?php echo e($offer->fecha_convertida); ?></p>
-                                        <a href="/editOffer/<?php echo e($offer->fecha_convertida); ?>"
+                                        <a href="<?php echo e(route('editOffer',['idOffer' => $offer->fecha_convertida])); ?>"
                                            class="btn btn-outline-primary btn-sm">Editar</a>
-                                        <a href="/changeStateOfferWithData/<?php echo e($offer->fecha_convertida); ?>"
+                                        <a href="<?php echo e(route('changeStateOfferWithData',['idOffer' => $offer->fecha_convertida])); ?>"
                                            class="btn btn-outline-secondary btn-sm deleteCard">Eliminar</a>
                                     </div>
                                 </div>

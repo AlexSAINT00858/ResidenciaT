@@ -9,7 +9,7 @@
             </div>
         @endif
         {{--    este formulario envia varios datos de la compañia al servidor--}}
-        <form method="POST" action="/registerCompany" class="w-100 m-auto my-3"
+        <form method="POST" action="{{ route('registerCompany') }}" class="w-100 m-auto my-3"
               style="text-align: center; width: 40%" enctype="multipart/form-data">
             {{-- agrega campo oculto para poder manejar un token y evitar problemas de seguridad--}}
             @csrf

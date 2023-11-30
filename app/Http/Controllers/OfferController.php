@@ -25,7 +25,7 @@
             $offertsWithOutData = $offer2->getAllOffertsActivesForAdmin();
 
             $result = $offertsWithData->concat($offertsWithOutData);
-            $result = $result->sortBy('publicationDate');
+            $result = $result->sortBy('fecha_convertida');
 
             // retornamos la vista con un arreglo que contiene todas las ofertas de empleo
             return view('dashboard', ['offerts' => $result]);
@@ -72,7 +72,7 @@
                 $offertsWithOutData = $offer2->getAllOffertsInactives();
 
                 $result = $offertsWithData->concat($offertsWithOutData);
-                $result = $result->sortBy('publicationDate');
+                $result = $result->sortBy('fecha_convertida');
                 // redireccionamos los datos a nuestra vista
                 return view('admin.showHistory', ['offerts' => $result]);
             }
@@ -88,7 +88,7 @@
             $dataOffer = [
                 'offerName' => $request->validated()['offerName'],
                 'descriptionOffer' => $request->validated()['descriptionOffer'],
-                'publicationDate' => date('y-m-d H:i:s'),
+                'publicationDate' => date('y-m-d h:i:s'),
                 'eliminationDate' => date('y-m-d'),
                 'salary' => $request->validated()['salary'],
                 'email' => $request->input('idCompany'),
@@ -105,7 +105,7 @@
             date_default_timezone_set("America/Mexico_City");
             $dataOffer = [
                 'offerImage' => $request->validated()['offerImage'],
-                'publicationDate' => date('y-m-d H:i:s'),
+                'publicationDate' => date('y-m-d h:i:s'),
                 'eliminationDate' => date('y-m-d'),
                 'email' => $request->input('idCompany'),
                 'state' => 'active'
@@ -131,7 +131,7 @@
             //Si se sube la imagen registramos a la oferta
             if ($request->hasFile("offerImage")) {
                 $file = $request->file("offerImage");
-                $name = "offer_" . date('y-m-d H:i:s') . "." . $file->guessExtension();
+                $name = "offer_" . date('y-m-d h:i:s') . "." . $file->guessExtension();
                 $ruta = public_path("imagesOfferts/" . $name);
                 if ($file->guessExtension() == "jpg" || $file->guessExtension() == "png" || $file->guessExtension() == "jpeg") {
                     copy($file, $ruta);
@@ -150,7 +150,7 @@
             $dataOffer = [
                 'offerName' => $request->validated()['offerName'],
                 'descriptionOffer' => $request->validated()['descriptionOffer'],
-                'publicationDate' => date('Y-m-d H:i:s'),
+                'publicationDate' => date('y-m-d h:i:s'),
                 'salary' => $request->validated()['salary'],
             ];
             //Buscamos la oferta por medio de su id
@@ -168,14 +168,15 @@
                 //Buscamos la oferta por medio de su id
                 $offerToChange = OfferWithData::find($idOffer);
                 // realizamos cambios a la oferta y las guardamos
-                $offerToChange->update(['state' => 'inactive', 'eliminationDate' => date('Y-m-d')]);
 
-                return redirect('/dashboard')->with('success', 'Offer delete successfully');
+                if($offerToChange->update(['state' => 'inactive', 'eliminationDate' => date('y-m-d')])) {
+                    return redirect('/dashboard')->with('success', 'Offer delete successfully');
+                }
             } catch (\Exception $e) {
                 // Manejar cualquier error que pueda ocurrir durante la eliminación
-                return redirect('/dashboard')->with('error', 'could not delete offer' . $e);
+                return redirect('/dashboard')->with('error', 'could not delete offer');
             }
-
+            return redirect('/dashboard')->with('error', 'could not delete offer');
         }
 
         public function changeStateOfferWithOutData($idOffer)
@@ -185,7 +186,7 @@
                 //Buscamos la oferta por medio de su id
                 $offerToChange = OfferWithOutData::find($idOffer);
                 // realizamos cambios a la oferta y las guardamos
-                $offerToChange->update(['state' => 'inactive', 'eliminationDate' => date('Y-m-d')]);
+                $offerToChange->update(['state' => 'inactive', 'eliminationDate' => date('y-m-d')]);
 
                 return redirect('/dashboard')->with('success', 'Offer delete successfully');
             } catch (\Exception $e) {

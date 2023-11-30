@@ -32,9 +32,9 @@
                                         <p class="card-text">${{ $offer->salary }}</p>
                                         <p class="card-text">{{ $offer->email }}</p>
                                         <p class="card-text">{{ $offer->fecha_convertida }}</p>
-                                        <a href="/editOffer/{{ $offer->fecha_convertida }}"
+                                        <a href="{{ route('editOffer',['idOffer' => $offer->fecha_convertida]) }}"
                                            class="btn btn-outline-primary btn-sm">Editar</a>
-                                        <a href="/changeStateOfferWithData/{{ $offer->fecha_convertida }}"
+                                        <a href="{{ route('changeStateOfferWithData',['idOffer' => $offer->fecha_convertida]) }}"
                                            class="btn btn-outline-secondary btn-sm deleteCard">Eliminar</a>
                                     </div>
                                 </div>

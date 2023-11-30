@@ -28,7 +28,7 @@
             return OfferWithData::select(
                 'offerts_with_data.offerName',
                 'offerts_with_data.descriptionOffer',
-                DB::raw("DATE_FORMAT(offerts_with_data.publicationDate,'%Y-%m-%d') as fecha_convertida"),
+                DB::raw("DATE_FORMAT(offerts_with_data.publicationDate,'%y-%m-%d') as fecha_convertida"),
                 'offerts_with_data.eliminationDate',
                 'offerts_with_data.salary',
                 'offerts_with_data.email',
@@ -36,20 +36,25 @@
                 'companies.logo'
             )
                 ->join('companies', 'offerts_with_data.email', '=', 'companies.email')
+                ->where('offerts_with_data.state', '=', 'active')
                 ->get();
         }
 
         public function getAllOffertsInactives()
         {
             return OfferWithData::select(
-                'offerName',
-                'descriptionOffer',
-                DB::raw("DATE_FORMAT(publicationDate,'%Y-%m-%d %H:%i:%s') as fecha_convertida"),
-                'eliminationDate',
-                'salary',
-                'email',
-                'state'
-            )->where('state', 'inactive')->get();
+                'offerts_with_data.offerName',
+                'offerts_with_data.descriptionOffer',
+                DB::raw("CONCAT(RIGHT(YEAR(offerts_with_data.publicationDate), 2), '-', DATE_FORMAT(offerts_with_data.publicationDate, '%m-%d %H:%i:%s')) as fecha_convertida"),
+                'offerts_with_data.eliminationDate',
+                'offerts_with_data.salary',
+                'offerts_with_data.email',
+                'offerts_with_data.state',
+                'companies.logo'
+            )
+                ->join('companies', 'offerts_with_data.email', '=', 'companies.email')
+                ->where('offerts_with_data.state', '=', 'inactive')
+                ->get();
         }
 
         public function getOffertsByIdCompany(string $idCompany)
@@ -62,7 +67,7 @@
             $resultado = OfferWithData::select(
                 'offerName',
                 'descriptionOffer',
-                DB::raw("DATE_FORMAT(publicationDate,'%Y-%m-%d %H:%i:%s') as fecha_convertida"),
+                DB::raw("DATE_FORMAT(publicationDate,'%y-%m-%d %h:%i:%s') as fecha_convertida"),
                 'eliminationDate',
                 'salary',
                 'email',
@@ -81,7 +86,7 @@
             return OfferWithData::select(
                 'offerts_with_data.offerName',
                 'offerts_with_data.descriptionOffer',
-                DB::raw("DATE_FORMAT(offerts_with_data.publicationDate,'%Y-%m-%d %H:%i:%s') as fecha_convertida"),
+                DB::raw("CONCAT(RIGHT(YEAR(offerts_with_data.publicationDate), 2), '-', DATE_FORMAT(offerts_with_data.publicationDate, '%m-%d %H:%i:%s')) as fecha_convertida"),
                 'offerts_with_data.eliminationDate',
                 'offerts_with_data.salary',
                 'offerts_with_data.email',
@@ -89,6 +94,7 @@
                 'companies.logo'
             )
                 ->join('companies', 'offerts_with_data.email', '=', 'companies.email')
+                ->where('offerts_with_data.state', '=', 'active')
                 ->get();
         }
     }
