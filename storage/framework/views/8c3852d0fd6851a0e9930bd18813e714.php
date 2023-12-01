@@ -56,7 +56,7 @@
                                     <div class="image-container">
                                         <img src="<?php echo e(asset('imagesOfferts/'.$offer->offerImage)); ?>" class="card-img imagen-ampliada"
                                              alt="Imagen" id="">
-                                        <a href="/changeStateOfferWithOutData/<?php echo e($offer->fecha_convertida); ?>"
+                                        <a href="<?php echo e(route('changeStateOfferWithOutData',['idOffer' => $offer->fecha_convertida])); ?>"
                                            class="btn btn-outline-secondary btn-sm deleteCard my-3">Eliminar</a>
                                     </div>
                                 </div>

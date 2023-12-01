@@ -26,7 +26,7 @@
         {
             return OfferWithOutData::select(
                 'offerImage',
-                DB::raw("DATE_FORMAT(publicationDate,'%Y-%m-%d') as fecha_convertida"),
+                DB::raw("DATE_FORMAT(publicationDate,'%y-%m-%d') as fecha_convertida"),
                 'eliminationDate',
                 'state'
             )->where('state', 'active')->get();
@@ -36,7 +36,7 @@
         {
             return OfferWithOutData::select(
                 'offerImage',
-                DB::raw("DATE_FORMAT(publicationDate,'%Y-%m-%d %H:%i:%s') as fecha_convertida"),
+                DB::raw("DATE_FORMAT(publicationDate,'%y-%m-%d %h:%i:%s') as fecha_convertida"),
                 'eliminationDate',
                 'state'
             )->where('state', 'inactive')->get();
@@ -56,7 +56,7 @@
         {
             return OfferWithOutData::select(
                 'offerImage',
-                DB::raw("DATE_FORMAT(publicationDate,'%Y-%m-%d %H:%i:%s') as fecha_convertida"),
+                DB::raw("DATE_FORMAT(publicationDate,'%y-%m-%d %h:%i:%s') as fecha_convertida"),
                 'eliminationDate',
                 'state'
             )->where('state', 'active')->get();

@@ -34,7 +34,7 @@
                                         <p class="card-text">${{ $offer->salary }}</p>
                                         <p class="card-text">{{ $offer->email }}</p>
                                         <p class="card-text">{{ $offer->fecha_convertida }}</p>
-                                        <a href="/deleteOfferWithData/{{ $offer->fecha_convertida }}"
+                                        <a href="{{ route('deleteOfferWithData',['idOffer' => $offer->fecha_convertida]) }}"
                                            class="btn btn-outline-secondary btn-sm deleteCard">Eliminar</a>
                                     </div>
                                 </div>
@@ -43,9 +43,9 @@
                             <div class="col" style="width: 50%; text-align: center">
                                 <div class="card h-auto">
                                     <div class="image-container">
-                                        <img src="{{ asset('images/OFERTA.png') }}" class="card-img imagen-ampliada"
+                                        <img src="{{ asset('imagesOfferts/'.$offer->offerImage) }}" class="card-img imagen-ampliada"
                                              alt="Imagen" id="">
-                                        <a href="/deleteOfferWithOutData/{{ $offer->fecha_convertida }}"
+                                        <a href="{{ route('deleteOfferWithOutData',['idOffer' => $offer->fecha_convertida]) }}"
                                            class="btn btn-outline-secondary btn-sm deleteCard my-3">Eliminar</a>
                                     </div>
                                 </div>

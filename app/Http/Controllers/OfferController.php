@@ -186,9 +186,10 @@
                 //Buscamos la oferta por medio de su id
                 $offerToChange = OfferWithOutData::find($idOffer);
                 // realizamos cambios a la oferta y las guardamos
-                $offerToChange->update(['state' => 'inactive', 'eliminationDate' => date('y-m-d')]);
-
-                return redirect('/dashboard')->with('success', 'Offer delete successfully');
+                if($offerToChange->update(['state' => 'inactive', 'eliminationDate' => date('y-m-d')])) {
+                    return redirect('/dashboard')->with('success', 'Offer delete successfully');
+                }
+                return redirect('/dashboard')->with('error', 'could not delete offer');
             } catch (\Exception $e) {
                 // Manejar cualquier error que pueda ocurrir durante la eliminación
                 return redirect('/dashboard')->with('error', 'could not delete offer' . $e);

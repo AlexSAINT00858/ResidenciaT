@@ -45,7 +45,7 @@
                                     <div class="image-container">
                                         <img src="{{ asset('imagesOfferts/'.$offer->offerImage) }}" class="card-img imagen-ampliada"
                                              alt="Imagen" id="">
-                                        <a href="/changeStateOfferWithOutData/{{ $offer->fecha_convertida }}"
+                                        <a href="{{ route('changeStateOfferWithOutData',['idOffer' => $offer->fecha_convertida]) }}"
                                            class="btn btn-outline-secondary btn-sm deleteCard my-3">Eliminar</a>
                                     </div>
                                 </div>
